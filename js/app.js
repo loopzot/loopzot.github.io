@@ -388,10 +388,24 @@ function renderPortfolio(config) {
           const cats = block.dataset.categories ? block.dataset.categories.split(',') : [];
           if (selected === 'All Categories' || cats.includes(selected)) {
             block.style.display = '';
-            setTimeout(() => block.classList.add('visible'), 50); // slight re-trigger for css transitions
             count++;
           } else {
             block.style.display = 'none';
+          }
+        });
+
+        // Re-apply alternating left/right layout based on visible order
+        let visibleIndex = 0;
+        blocks.forEach(block => {
+          if (block.style.display !== 'none') {
+            if (visibleIndex % 2 === 1) {
+              block.classList.add('reversed');
+            } else {
+              block.classList.remove('reversed');
+            }
+            // Re-trigger scroll animation
+            setTimeout(() => block.classList.add('visible'), 50);
+            visibleIndex++;
           }
         });
 
