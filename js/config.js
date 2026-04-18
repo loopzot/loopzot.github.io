@@ -59,7 +59,7 @@ const PORTFOLIO_CONFIG = {
       "description": "A conversational clip transformed into a focused storytelling piece that explores the core idea of “change” in editing. The final video balances clarity and rhythm, using intentional pacing and subtle visuals to guide the viewer through a clear narrative progression.",
       "problem": "The raw conversation lacked structure and contained filler words, making the message feel scattered and less impactful. The pacing was inconsistent, which reduced viewer retention and diluted the core idea being communicated.",
       "goal": "To convert the unstructured dialogue into a clear, engaging narrative that emphasizes the concept of storytelling through change. The aim was to improve flow, maintain viewer attention, and ensure the message lands with clarity and purpose.",
-      "solution": "Refined the dialogue by removing filler words and tightening sentences to create a smoother, more coherent flow. Structured the edit around the central idea of progression, using pacing as the primary tool—alternating between faster cuts and intentional holds to match the speaker’s energy and emphasize key moments. Integrated minimal, high-end motion graphics, including directional paths and clean layouts, to visually represent the transition from one idea to another. Focused on maintaining a clean, professional aesthetic while enhancing clarity, rhythm, and overall engagement.",
+      "solution": "• Removed filler words and tightened dialogue to improve clarity and flow\n• Structured the edit around a clear narrative progression (from idea to insight)\n• Used pacing strategically—balancing fast cuts and intentional pauses\n• Held on key moments to emphasize emotion and thought process\n• Added minimal, high-end motion graphics to visualize idea progression\n• Used clean layouts and directional elements to guide viewer attention\n• Maintained a professional, distraction-free aesthetic\n• Focused on rhythm and storytelling to improve retention and engagement",
       "videoUrl": "https://drive.google.com/file/d/1jWP9bC_1wyurq-syfb9PD69B1Ji4HMU_/view?usp=drivesdk",
       "tags": [
         "Storytelling",
@@ -75,16 +75,16 @@ const PORTFOLIO_CONFIG = {
     },
     {
       "id": "v2",
-      "title": "YouTube Retention Edit",
-      "description": "Explaining effects done by famous YouTubers to make sure my audience does'nt miss out anything.",
-      "problem": "Previous videos had a steep drop-off rate within the first 30 seconds of the video.",
-      "goal": "Maximize viewer retention using visual pattern interrupts and fast-paced editing.",
-      "solution": "Implemented jump cuts, dynamic zooms, text overlays, and an active sound design layer.",
+      "title": "Simplified Effect Demonstration",
+      "description": "A fast-paced tutorial video that recreates a popular effect inspired by a famous celebrity. The content is structured into simple, actionable steps, combining curiosity-driven hooks with clear visual guidance to make the effect easy to understand and replicate.",
+      "problem": "The original concept could feel complex and overwhelming for viewers, especially beginners. Without clear structure, tutorials like this risk losing attention early or confusing the audience, reducing completion rate and engagement.",
+      "goal": "To simplify the effect into an easy-to-follow process while keeping the video engaging and retention-focused. The objective was to ensure viewers clearly understand the concept and are motivated to try it themselves.",
+      "solution": "• Broke down the effect into three clear steps to simplify the process\n• Opened with a curiosity-driven hook to capture attention instantly\n• Leveraged familiarity by referencing a famous celebrity to boost initial engagement\n• Explained each step in a simple, easy-to-follow manner for better understanding\n• Used clean visual demonstrations to reinforce the concept\n• Maintained tight pacing to keep the video engaging throughout\n• Focused on clarity and accessibility to improve retention and reach",
       "videoUrl": "https://www.youtube.com/shorts/sY2ZxTgvoXs",
       "tags": [
         "YouTube",
         "Retention",
-        "Pacing"
+        "Tutorial"
       ],
       "ratio": "9:16",
       "categories": [
