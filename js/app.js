@@ -621,11 +621,8 @@ function setupHireMeReveal() {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) {
-        // Bio block is out of view — show the button
         hireBtn.classList.add('visible');
-      } else {
-        // Bio block is in view — hide the button
-        hireBtn.classList.remove('visible');
+        observer.disconnect();
       }
     });
   }, { threshold: 0.1 });
