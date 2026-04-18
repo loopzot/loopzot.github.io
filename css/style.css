@@ -312,7 +312,7 @@ button {
   justify-content: space-between;
   gap: 40px;
   padding: 120px 80px 60px; 
-  overflow: hidden;
+  overflow: visible;
   z-index: 10;
   max-width: 1400px;
   margin: 0 auto;
@@ -448,13 +448,16 @@ button {
 
 @media (max-width: 768px) {
   .availability-badge {
-    top: 24px;
-    right: 24px;
+    position: static;
+    display: inline-flex;
+    margin: 0 auto 20px;
+    transform: none;
     padding: 6px 12px;
     font-size: 0.75rem;
   }
   .cta-group {
     justify-content: center;
+    width: 100%;
   }
 }
 
@@ -548,6 +551,7 @@ button {
   display: inline-block;
   opacity: 0;
   transform: translateY(20px);
+  z-index: 200;
 }
 
 .cta-btn {
@@ -601,6 +605,7 @@ button {
   pointer-events: none;
   transition: all 0.3s var(--ease-out);
   box-shadow: var(--shadow-elevated);
+  z-index: 200;
 }
 
 .cta-wrapper.open .contact-dropdown {
@@ -1079,7 +1084,9 @@ button {
   }
 
   .hero {
-    padding-top: 85px;
+    padding-top: 100px;
+    flex-direction: column;
+    align-items: center;
   }
 
   .hero-intro {
@@ -1133,7 +1140,7 @@ button {
 
 @media (max-width: 480px) {
   .hero {
-    padding: 40px 16px;
+    padding: 90px 16px 40px;
   }
 
   .hero-name {
