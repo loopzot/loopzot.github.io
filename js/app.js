@@ -504,10 +504,10 @@ function openCaseStudy(video) {
         <h2 class="cs-title">${video.title}</h2>
         
         <div class="cs-details">
-          ${video.problem ? `<div class="cs-section"><h4 class="cs-subheading">Problem</h4><div class="cs-text">${(video.problem||'').replace(/\\n/g, '<br>')}</div></div>` : ''}
-          ${video.goal ? `<div class="cs-section"><h4 class="cs-subheading">Goal</h4><div class="cs-text">${(video.goal||'').replace(/\\n/g, '<br>')}</div></div>` : ''}
-          ${video.solution ? `<div class="cs-section"><h4 class="cs-subheading">What I did</h4><div class="cs-text">${(video.solution||'').replace(/\\n/g, '<br>')}</div></div>` : ''}
-          ${!video.problem && !video.goal && !video.solution && video.description ? `<div class="cs-description">${video.description.replace(/\\n/g, '<br>')}</div>` : ''}
+          ${video.problem ? `<div class="cs-section"><h4 class="cs-subheading">Problem</h4><div class="cs-text">${(video.problem||'').replace(/\\n/g, '<br>').replace(/\n/g, '<br>')}</div></div>` : ''}
+          ${video.goal ? `<div class="cs-section"><h4 class="cs-subheading">Goal</h4><div class="cs-text">${(video.goal||'').replace(/\\n/g, '<br>').replace(/\n/g, '<br>')}</div></div>` : ''}
+          ${video.solution ? `<div class="cs-section"><h4 class="cs-subheading">What I did</h4><div class="cs-text">${(video.solution||'').replace(/\\n/g, '<br>').replace(/\n/g, '<br>')}</div></div>` : ''}
+          ${!video.problem && !video.goal && !video.solution && video.description ? `<div class="cs-description">${video.description.replace(/\\n/g, '<br>').replace(/\n/g, '<br>')}</div>` : ''}
         </div>
         
         ${tagsHTML ? `<div class="cs-tags">${tagsHTML}</div>` : ''}
