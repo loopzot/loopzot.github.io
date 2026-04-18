@@ -586,3 +586,84 @@ input:checked + .toggle-slider:before {
   border-top: 1px solid var(--border);
   padding-top: 24px;
 }
+
+/* ── Publish Button ─────────────────────── */
+.admin-btn-publish {
+  background: linear-gradient(135deg, #00d3c8, #00a89e);
+  color: #000;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  box-shadow: 0 0 15px rgba(0, 211, 200, 0.2);
+  transition: all 0.3s var(--ease-smooth);
+}
+
+.admin-btn-publish:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0, 211, 200, 0.35);
+  background: linear-gradient(135deg, #33e1d8, #00d3c8);
+}
+
+.admin-btn-publish:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.admin-btn-publish.publishing {
+  animation: publishPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes publishPulse {
+  0%, 100% { box-shadow: 0 0 15px rgba(0, 211, 200, 0.2); }
+  50% { box-shadow: 0 0 25px rgba(0, 211, 200, 0.5); }
+}
+
+/* ── GitHub Connection Status ────────────── */
+.github-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  margin-bottom: 20px;
+}
+
+.github-status.connected {
+  background: rgba(0, 211, 200, 0.08);
+  border: 1px solid rgba(0, 211, 200, 0.2);
+  color: var(--accent);
+}
+
+.github-status.disconnected {
+  background: rgba(231, 76, 60, 0.08);
+  border: 1px solid rgba(231, 76, 60, 0.2);
+  color: #e74c3c;
+}
+
+.github-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.github-status.connected .github-status-dot {
+  background: var(--accent);
+  box-shadow: 0 0 6px var(--accent);
+}
+
+.github-status.disconnected .github-status-dot {
+  background: #e74c3c;
+}
+
+.github-token-hint {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 8px;
+  line-height: 1.5;
+}

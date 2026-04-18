@@ -107,6 +107,7 @@ function initDashboard(config) {
   renderVideoList(liveConfig);
   renderFeedbackList(liveConfig);
   renderFaqList(liveConfig);
+  renderGitHubSettingsForm();
   renderAdminSettingsForm(liveConfig);
 
   setupFilterModal(liveConfig);
@@ -127,6 +128,11 @@ function initDashboard(config) {
     // Save first, then open main page
     saveConfig(liveConfig);
     window.open('index.html', '_blank');
+  });
+
+  // Publish button
+  document.getElementById('publish-btn').addEventListener('click', () => {
+    publishToGitHub(liveConfig);
   });
 }
 
@@ -754,6 +760,160 @@ if (typeof module !== 'undefined' && module.exports) {
   URL.revokeObjectURL(url);
 
   showToast('Config exported! Replace js/config.js with the downloaded file.', 'success');
+}
+
+
+// ── GitHub Settings Form ────────────────────
+
+function renderGitHubSettingsForm() {
+  const container = document.getElementById('github-settings-form');
+  if (!container) return;
+
+  const savedToken = localStorage.getItem('github_token') || '';
+  const savedRepo = localStorage.getItem('github_repo') || 'loop-zot/portfolio';
+  const isConnected = !!savedToken;
+
+  container.innerHTML = `
+    <div class="github-status ${isConnected ? 'connected' : 'disconnected'}">
+      <span class="github-status-dot"></span>
+      ${isConnected ? 'Connected to GitHub — Ready to publish' : 'Not connected — Enter your GitHub token below'}
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">Repository <span style="font-size: 0.8em; color: var(--text-secondary); font-weight: normal;">(owner/repo)</span></label>
+        <input class="form-input" type="text" id="field-github-repo" value="${escapeHtml(savedRepo)}" placeholder="username/repository">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Personal Access Token</label>
+        <div class="password-wrapper">
+          <input class="form-input" type="password" id="field-github-token" value="${escapeHtml(savedToken)}" placeholder="ghp_xxxxxxxxxxxx">
+          <button class="eye-btn" type="button" onclick="window.togglePwd('field-github-token', this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></button>
+        </div>
+        <p class="github-token-hint">Token is stored only in your browser's localStorage. Never shared or uploaded.</p>
+      </div>
+    </div>
+    <button class="admin-btn admin-btn-primary" id="save-github-settings-btn">Save GitHub Settings</button>
+  `;
+
+  document.getElementById('save-github-settings-btn').addEventListener('click', () => {
+    const token = document.getElementById('field-github-token').value.trim();
+    const repo = document.getElementById('field-github-repo').value.trim();
+
+    if (!token) {
+      localStorage.removeItem('github_token');
+      localStorage.removeItem('github_repo');
+      showToast('GitHub settings cleared.', 'success');
+    } else {
+      localStorage.setItem('github_token', token);
+      localStorage.setItem('github_repo', repo || 'loop-zot/portfolio');
+      showToast('GitHub settings saved!', 'success');
+    }
+    renderGitHubSettingsForm();
+  });
+}
+
+
+// ── Publish to GitHub ───────────────────────
+
+async function publishToGitHub(config) {
+  const token = localStorage.getItem('github_token');
+  const repo = localStorage.getItem('github_repo');
+
+  if (!token || !repo) {
+    showToast('Please configure GitHub settings first (scroll to GitHub Deploy Settings).', 'error');
+    return;
+  }
+
+  const publishBtn = document.getElementById('publish-btn');
+  const originalText = publishBtn.innerHTML;
+  publishBtn.disabled = true;
+  publishBtn.classList.add('publishing');
+  publishBtn.innerHTML = `
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 16 12 12 8 16"></polyline><line x1="12" y1="12" x2="12" y2="21"></line><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"></path><polyline points="16 16 12 12 8 16"></polyline></svg>
+    Publishing...
+  `;
+
+  try {
+    // Generate the config.js file content
+    const exportData = deepClone(config);
+    const jsContent = `/**
+ * ============================================
+ *  PORTFOLIO CONFIGURATION FILE
+ * ============================================
+ *  Edit this file to update your portfolio.
+ *  No coding knowledge required — just change
+ *  the text between the quotes.
+ * ============================================
+ */
+
+const PORTFOLIO_CONFIG = ${JSON.stringify(exportData, null, 2)};
+
+// Make config available globally
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = PORTFOLIO_CONFIG;
+}
+`;
+
+    // Step 1: Get the current file's SHA (required for updates)
+    const filePath = 'js/config.js';
+    const apiUrl = `https://api.github.com/repos/${repo}/contents/${filePath}`;
+
+    const getResponse = await fetch(apiUrl, {
+      headers: {
+        'Authorization': `token ${token}`,
+        'Accept': 'application/vnd.github.v3+json'
+      }
+    });
+
+    if (!getResponse.ok && getResponse.status !== 404) {
+      throw new Error(`GitHub API error: ${getResponse.status} ${getResponse.statusText}`);
+    }
+
+    let sha = null;
+    if (getResponse.ok) {
+      const fileData = await getResponse.json();
+      sha = fileData.sha;
+    }
+
+    // Step 2: Update the file
+    const updateBody = {
+      message: `Update portfolio config — ${new Date().toLocaleString()}`,
+      content: btoa(unescape(encodeURIComponent(jsContent))),
+      branch: 'main'
+    };
+
+    if (sha) {
+      updateBody.sha = sha;
+    }
+
+    const putResponse = await fetch(apiUrl, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `token ${token}`,
+        'Accept': 'application/vnd.github.v3+json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(updateBody)
+    });
+
+    if (!putResponse.ok) {
+      const errorData = await putResponse.json();
+      throw new Error(errorData.message || `Failed: ${putResponse.status}`);
+    }
+
+    // Also save to localStorage
+    saveConfig(config);
+
+    showToast('Published! Your site will update in 1-2 minutes.', 'success');
+
+  } catch (error) {
+    console.error('Publish error:', error);
+    showToast(`Publish failed: ${error.message}`, 'error');
+  } finally {
+    publishBtn.disabled = false;
+    publishBtn.classList.remove('publishing');
+    publishBtn.innerHTML = originalText;
+  }
 }
 
 
