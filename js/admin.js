@@ -800,7 +800,7 @@ function renderGitHubSettingsForm() {
   if (!container) return;
 
   const savedToken = localStorage.getItem('github_token') || '';
-  const savedRepo = localStorage.getItem('github_repo') || 'loop-zot/portfolio';
+  const savedRepo = localStorage.getItem('github_repo') || 'loopzot/portfolio';
   const isConnected = !!savedToken;
 
   container.innerHTML = `
@@ -835,7 +835,7 @@ function renderGitHubSettingsForm() {
       showToast('GitHub settings cleared.', 'success');
     } else {
       localStorage.setItem('github_token', token);
-      localStorage.setItem('github_repo', repo || 'loop-zot/portfolio');
+      localStorage.setItem('github_repo', repo || 'loopzot/portfolio');
       showToast('GitHub settings saved!', 'success');
     }
     renderGitHubSettingsForm();
