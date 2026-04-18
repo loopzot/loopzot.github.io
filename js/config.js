@@ -76,7 +76,7 @@ const PORTFOLIO_CONFIG = {
     {
       "id": "v2",
       "title": "YouTube Retention Edit",
-      "description": "Fast-paced editing designed for maximum viewer retention — jump cuts, zooms, text overlays, and sound design.",
+      "description": "Explaining effects done by famous YouTubers to make sure my audience does'nt miss out anything.",
       "problem": "Previous videos had a steep drop-off rate within the first 30 seconds of the video.",
       "goal": "Maximize viewer retention using visual pattern interrupts and fast-paced editing.",
       "solution": "Implemented jump cuts, dynamic zooms, text overlays, and an active sound design layer.",
