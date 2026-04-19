@@ -7,18 +7,8 @@
 // ── App Core Configurations ───────────────
 
 document.addEventListener('DOMContentLoaded', () => {
-  // ── Load config: localStorage (admin edits) takes priority ──
-  let config = deepMergeConfig(PORTFOLIO_CONFIG);
-  const saved = localStorage.getItem('portfolio_config');
-  if (saved) {
-    try {
-      const parsed = JSON.parse(saved);
-      // Merge saved data over defaults so new config keys aren't lost
-      config = deepMergeConfig(PORTFOLIO_CONFIG, parsed);
-    } catch(e) {
-      console.warn('Invalid saved config, using default');
-    }
-  }
+  // ── Load config: Use the global PORTFOLIO_CONFIG exclusively for global sync ──
+  const config = deepMergeConfig(PORTFOLIO_CONFIG);
 
   // ── Render All Sections ───────────────────
   renderHero(config);

@@ -33,20 +33,7 @@ function isObject(item) {
 }
 
 function loadConfig() {
-  const saved = localStorage.getItem('portfolio_config');
-  if (saved) {
-    try {
-      const parsed = JSON.parse(saved);
-      return deepMergeConfig(PORTFOLIO_CONFIG, parsed);
-    } catch (e) {
-      console.warn('Invalid saved config, using default');
-    }
-  }
   return deepClone(PORTFOLIO_CONFIG);
-}
-
-function saveConfig(config) {
-  localStorage.setItem('portfolio_config', JSON.stringify(config));
 }
 
 function deepClone(obj) {
@@ -113,25 +100,12 @@ function initDashboard(config) {
   setupFilterModal(liveConfig);
   setupAdminTabs();
 
-  // Save button
-  document.getElementById('save-btn').addEventListener('click', () => {
-    saveConfig(liveConfig);
-    showToast('Changes saved successfully!', 'success');
-  });
-
   // Export button
   document.getElementById('export-btn').addEventListener('click', () => {
     exportConfig(liveConfig);
   });
 
-  // Preview button
-  document.getElementById('preview-btn').addEventListener('click', () => {
-    // Save first, then open main page
-    saveConfig(liveConfig);
-    window.open('index.html', '_blank');
-  });
-
-  // Publish button
+  // Publish button (Standard Publish)
   document.getElementById('publish-btn').addEventListener('click', () => {
     publishToGitHub(liveConfig);
   });
@@ -366,17 +340,12 @@ function renderAdminSettingsForm(config) {
     if (newPwd !== confirmPwd) return showToast('New passwords do not match.', 'error');
 
     config.admin.password = newPwd;
-    saveConfig(config);
-    showToast('Password updated! The page will now reload with your new credentials.', 'success');
+    showToast('Password updated in memory! You MUST click "Publish Live" to make it permanent.', 'success');
     
-    // Clear fields and reload to test
+    // Clear fields
     document.getElementById('field-current-pwd').value = '';
     document.getElementById('field-new-pwd').value = '';
     document.getElementById('field-confirm-pwd').value = '';
-    
-    setTimeout(() => {
-      window.location.reload();
-    }, 1500);
   });
 }
 
@@ -931,10 +900,8 @@ if (typeof module !== 'undefined' && module.exports) {
       throw new Error(errorData.message || `Failed: ${putResponse.status}`);
     }
 
-    // Also save to localStorage
-    saveConfig(config);
-
-    showToast('Published! Your site will update in 1-2 minutes.', 'success');
+    // Publishing complete
+    showToast('Published! Your site will update globally in 1-2 minutes.', 'success');
 
   } catch (error) {
     console.error('Publish error:', error);
