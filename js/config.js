@@ -22,7 +22,7 @@ const PORTFOLIO_CONFIG = {
   "bioBlock": {
     "introTitle": "About Me",
     "introText": "I specialize in editing videos in a way that brings out what they are actually trying to say. Most raw footage feels unclear and unfinished, like it has something to say but cannot fully express it. My job is to shape that into something clear, meaningful, and emotionally true so the viewer understands it exactly the way it is meant to be felt.",
-    "specialization": "Short-form content, Documentaries, & Brand Films",
+    "specialization": "Short-form content, Documentaries, & Motion Graphics",
     "services": [
       "Video Editing",
       "Motion Graphics",
