@@ -74,25 +74,6 @@ const PORTFOLIO_CONFIG = {
       "isVisible": true
     },
     {
-      "id": "v3",
-      "title": "3D Tracking Concept Breakdown",
-      "description": "An educational reel designed to introduce and position 3D tracking as a high-value editing skill. The video combines explanation, real-world applications, and a strong call-to-action, making it both informative and conversion-focused.",
-      "problem": "3D tracking is often perceived as complex and difficult to learn, leading to low engagement and drop-offs in tutorial content. Additionally, without clear context or application, viewers may not see its importance or feel motivated to learn it.",
-      "goal": "To simplify the concept of 3D tracking, highlight its real-world value, and drive audience action by offering a clear learning pathway and resource. The objective was to attract the right audience and convert interest into engagement.",
-      "solution": "• Opened with a direct hook targeting editors to immediately capture the right audience\n• Simplified the concept of 3D tracking using clear, easy-to-understand language\n• Highlighted real-world applications (movies, ads, digital screens) to increase perceived value\n• Built curiosity by questioning the importance of mastering the effect\n• Structured the content to progressively build understanding and interest\n• Listed key areas and variations of the effect to show depth and scope\n• Reinforced learning with motion graphics to visually demonstrate the concept\n• Positioned the effect as a must-have skill to create urgency and relevance\n• Provided a valuable PDF resource with curated tutorials for deeper learning\n• Ended with a clear call-to-action to drive comments, follows, and engagement",
-      "videoUrl": "https://youtube.com/shorts/Sp7buddl1Ss?feature=share",
-      "tags": [
-        "Effect Tutorial",
-        "Concept Teaching",
-        "Motion Graphics"
-      ],
-      "ratio": "9:16",
-      "categories": [
-        "Short Form"
-      ],
-      "isVisible": true
-    },
-    {
       "id": "v2",
       "title": "Simplified Effect Demonstration",
       "description": "A fast-paced tutorial video that recreates a popular effect inspired by a famous celebrity. The content is structured into simple, actionable steps, combining curiosity-driven hooks with clear visual guidance to make the effect easy to understand and replicate.",
@@ -108,6 +89,25 @@ const PORTFOLIO_CONFIG = {
       "ratio": "9:16",
       "categories": [
         "Long Form"
+      ],
+      "isVisible": true
+    },
+    {
+      "id": "v3",
+      "title": "3D Tracking Concept Breakdown",
+      "description": "An educational reel designed to introduce and position 3D tracking as a high-value editing skill. The video combines explanation, real-world applications, and a strong call-to-action, making it both informative and conversion-focused.",
+      "problem": "3D tracking is often perceived as complex and difficult to learn, leading to low engagement and drop-offs in tutorial content. Additionally, without clear context or application, viewers may not see its importance or feel motivated to learn it.",
+      "goal": "To simplify the concept of 3D tracking, highlight its real-world value, and drive audience action by offering a clear learning pathway and resource. The objective was to attract the right audience and convert interest into engagement.",
+      "solution": "• Opened with a direct hook targeting editors to immediately capture the right audience\n• Simplified the concept of 3D tracking using clear, easy-to-understand language\n• Highlighted real-world applications (movies, ads, digital screens) to increase perceived value\n• Built curiosity by questioning the importance of mastering the effect\n• Structured the content to progressively build understanding and interest\n• Listed key areas and variations of the effect to show depth and scope\n• Reinforced learning with motion graphics to visually demonstrate the concept\n• Positioned the effect as a must-have skill to create urgency and relevance\n• Provided a valuable PDF resource with curated tutorials for deeper learning\n• Ended with a clear call-to-action to drive comments, follows, and engagement",
+      "videoUrl": "https://youtube.com/shorts/Sp7buddl1Ss?feature=share",
+      "tags": [
+        "Effect Tutorial",
+        "Concept Teaching",
+        "Motion Graphics"
+      ],
+      "ratio": "9:16",
+      "categories": [
+        "Short Form"
       ],
       "isVisible": true
     },
