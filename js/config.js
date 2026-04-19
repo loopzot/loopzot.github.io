@@ -32,7 +32,7 @@ const PORTFOLIO_CONFIG = {
     "importantNoteText": "The videos edited by me will not include any form of background music as per my religious guidelines. If you are okay with using vocals-only Islamic nasheeds, we can discuss further."
   },
   "filters": {
-    "enabled": true,
+    "enabled": false,
     "categories": [
       "Short Form",
       "Long Form"
@@ -108,44 +108,6 @@ const PORTFOLIO_CONFIG = {
       "ratio": "9:16",
       "categories": [
         "Long Form"
-      ],
-      "isVisible": true
-    },
-    {
-      "id": "v4",
-      "title": "Documentary Style Edit",
-      "description": "Clean, narrative-driven editing with subtle transitions and atmospheric sound design that respects the story.",
-      "problem": "The raw footage was lengthy and lacked a clear, cohesive narrative structure.",
-      "goal": "Tell a clean, narrative-driven story while respecting the original material's tone.",
-      "solution": "Used subtle transitions, atmospheric sound design, and careful pacing to maintain interest.",
-      "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
-      "tags": [
-        "Documentary",
-        "Storytelling",
-        "Atmosphere"
-      ],
-      "ratio": "16:9",
-      "categories": [
-        "Long Form"
-      ],
-      "isVisible": true
-    },
-    {
-      "id": "v5",
-      "title": "Music Video Production",
-      "description": "Beat-synced editing with creative visual effects and color treatment that amplifies the music's emotion.",
-      "problem": "The video needed to perfectly mirror the high energy and evolving beat of the music.",
-      "goal": "Visually emphasize key drops and ensure transitions feel like part of the music.",
-      "solution": "Applied beat-synced editing, complex visual effects, and a stylized color treatment.",
-      "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
-      "tags": [
-        "Music Video",
-        "Beat Sync",
-        "VFX"
-      ],
-      "ratio": "9:16",
-      "categories": [
-        "Short Form"
       ],
       "isVisible": true
     }
