@@ -69,7 +69,7 @@ body {
 main {
   position: relative;
   z-index: 1;
-  overflow: hidden;
+  /* Removed aggressive overflow:hidden that was clipping modals */
 }
 
 /* ── Mixed Gradient Background ──────────────── */
@@ -718,35 +718,24 @@ button {
   border-color: var(--accent);
 }
 
-/* ── Views / Sections ────────────────────── */
 .dynamic-sections {
   position: relative;
-  overflow: hidden;
+  /* Removal of overflow: hidden to allow the wave background to show through if needed, 
+     but keeping it controlled within section views */
 }
 
 .section-view {
+  display: none;
   opacity: 0;
-  visibility: hidden;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 0;
-  overflow: hidden;
   transform: translateY(20px);
-  transition: opacity 0.5s var(--ease-smooth), transform 0.5s var(--ease-smooth), visibility 0.5s;
-  pointer-events: none;
+  transition: opacity 0.5s var(--ease-smooth), transform 0.5s var(--ease-smooth);
 }
 
 .section-view.active {
+  display: block;
   opacity: 1;
-  visibility: visible;
-  position: relative;
-  height: auto;
-  overflow: visible;
   transform: translateY(0);
-  pointer-events: all;
-  transition: opacity 0.5s var(--ease-smooth) 0.1s, transform 0.5s var(--ease-smooth) 0.1s, visibility 0.5s 0.1s;
+  transition: opacity 0.5s var(--ease-smooth) 0.1s, transform 0.5s var(--ease-smooth) 0.1s;
 }
 
 /* ── Content Layout Settings ─────────────── */
@@ -1422,12 +1411,12 @@ button {
   -webkit-backdrop-filter: blur(10px);
   z-index: 10000;
   display: flex;
-  align-items: center;
+  align-items: flex-start; /* Changed from center to prevent clipping long modals */
   justify-content: center;
   opacity: 0;
   visibility: hidden;
   transition: all 0.4s var(--ease-smooth);
-  overflow: hidden;
+  overflow-y: auto; /* Allow the overlay itself to scroll if the modal is taller than viewport */
 }
 
 .case-study-overlay.active {
@@ -1437,7 +1426,7 @@ button {
 
 .case-study-modal {
   width: 100%;
-  height: 100%;
+  min-height: 100vh; /* Ensure modal takes full height to allow internal scroll */
   max-width: 1200px;
   margin: 0 auto;
   position: relative;
@@ -1479,7 +1468,7 @@ button {
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   overscroll-behavior: contain;
-  padding: 80px 40px 100px;
+  padding: 100px 40px; /* Adjusted padding */
   scrollbar-width: thin;
   scrollbar-color: var(--accent) var(--bg-card);
 }
@@ -1510,6 +1499,8 @@ button {
   overflow: hidden;
   border: 1px solid var(--border);
   aspect-ratio: 16 / 9;
+  position: relative; /* Fixed: Added to contain the absolute video-placeholder */
+  background: #000;
 }
 
 .vertical-case .cs-video-container {

@@ -586,13 +586,12 @@ function openCaseStudy(video) {
   modal.classList.add('active');
   document.body.style.overflow = 'hidden';
 
-  // Prevent background scroll on touch devices
-  const preventBgScroll = (e) => {
+  // Prevent background scroll on touch devices (Simplified to rely on body overflow)
+  modal.addEventListener('touchmove', (e) => {
     if (!e.target.closest('.case-study-scroll-area')) {
       e.preventDefault();
     }
-  };
-  modal.addEventListener('touchmove', preventBgScroll, { passive: false });
+  }, { passive: false });
 
   // Scroll the content area to top
   const scrollArea = modal.querySelector('.case-study-scroll-area');
