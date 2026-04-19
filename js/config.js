@@ -12,7 +12,7 @@ const PORTFOLIO_CONFIG = {
   "personalInfo": {
     "introText": "Introducing Myself",
     "name": "Syed Sufiyan",
-    "role": "Video Editor | Founder of Loop Zot",
+    "role": "Professional Video Editor | Founder of Loop Zot",
     "tagline": "Turning Thoughts into Timeline"
   },
   "availability": {
