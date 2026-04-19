@@ -74,25 +74,6 @@ const PORTFOLIO_CONFIG = {
       "isVisible": true
     },
     {
-      "id": "v2",
-      "title": "Simplified Effect Demonstration",
-      "description": "A fast-paced tutorial video that recreates a popular effect inspired by a famous celebrity. The content is structured into simple, actionable steps, combining curiosity-driven hooks with clear visual guidance to make the effect easy to understand and replicate.",
-      "problem": "The original concept could feel complex and overwhelming for viewers, especially beginners. Without clear structure, tutorials like this risk losing attention early or confusing the audience, reducing completion rate and engagement.",
-      "goal": "To simplify the effect into an easy-to-follow process while keeping the video engaging and retention-focused. The objective was to ensure viewers clearly understand the concept and are motivated to try it themselves.",
-      "solution": "• Broke down the effect into three clear steps to simplify the process\n• Opened with a curiosity-driven hook to capture attention instantly\n• Leveraged familiarity by referencing a famous celebrity to boost initial engagement\n• Explained each step in a simple, easy-to-follow manner for better understanding\n• Used clean visual demonstrations to reinforce the concept\n• Maintained tight pacing to keep the video engaging throughout\n• Focused on clarity and accessibility to improve retention and reach",
-      "videoUrl": "https://www.youtube.com/shorts/sY2ZxTgvoXs",
-      "tags": [
-        "YouTube",
-        "Retention",
-        "Tutorial"
-      ],
-      "ratio": "9:16",
-      "categories": [
-        "Long Form"
-      ],
-      "isVisible": true
-    },
-    {
       "id": "v3",
       "title": "3D Tracking Concept Breakdown",
       "description": "An educational reel designed to introduce and position 3D tracking as a high-value editing skill. The video combines explanation, real-world applications, and a strong call-to-action, making it both informative and conversion-focused.",
@@ -108,6 +89,25 @@ const PORTFOLIO_CONFIG = {
       "ratio": "9:16",
       "categories": [
         "Short Form"
+      ],
+      "isVisible": true
+    },
+    {
+      "id": "v2",
+      "title": "Simplified Effect Demonstration",
+      "description": "A fast-paced tutorial video that recreates a popular effect inspired by a famous celebrity. The content is structured into simple, actionable steps, combining curiosity-driven hooks with clear visual guidance to make the effect easy to understand and replicate.",
+      "problem": "The original concept could feel complex and overwhelming for viewers, especially beginners. Without clear structure, tutorials like this risk losing attention early or confusing the audience, reducing completion rate and engagement.",
+      "goal": "To simplify the effect into an easy-to-follow process while keeping the video engaging and retention-focused. The objective was to ensure viewers clearly understand the concept and are motivated to try it themselves.",
+      "solution": "• Broke down the effect into three clear steps to simplify the process\n• Opened with a curiosity-driven hook to capture attention instantly\n• Leveraged familiarity by referencing a famous celebrity to boost initial engagement\n• Explained each step in a simple, easy-to-follow manner for better understanding\n• Used clean visual demonstrations to reinforce the concept\n• Maintained tight pacing to keep the video engaging throughout\n• Focused on clarity and accessibility to improve retention and reach",
+      "videoUrl": "https://www.youtube.com/shorts/sY2ZxTgvoXs",
+      "tags": [
+        "YouTube",
+        "Retention",
+        "Tutorial"
+      ],
+      "ratio": "9:16",
+      "categories": [
+        "Long Form"
       ],
       "isVisible": true
     }
