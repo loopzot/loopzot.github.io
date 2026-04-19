@@ -1426,7 +1426,7 @@ button {
 
 .case-study-modal {
   width: 100%;
-  min-height: 100vh; /* Ensure modal takes full height to allow internal scroll */
+  min-height: 100%; /* Changed from 100vh to allow auto-height on content */
   max-width: 1200px;
   margin: 0 auto;
   position: relative;
@@ -1577,18 +1577,28 @@ button {
 }
 
 @media (max-width: 992px) {
-  .cs-layout, .cs-layout.vertical-case {
-    grid-template-columns: 1fr;
-    gap: 40px;
+  .case-study-overlay {
+    align-items: flex-start;
+    overflow-y: auto;
+  }
+  .case-study-modal {
+    min-height: 100%;
+    height: auto;
   }
   .case-study-scroll-area {
-    padding: 80px 24px 60px;
+    padding: 60px 20px 40px;
+    overflow: visible; /* Let parent handle scroll on mobile */
+    height: auto;
   }
-  .close-case-study {
-    top: 20px;
-    right: 20px;
+  .cs-layout, .cs-layout.vertical-case {
+    grid-template-columns: 1fr;
+    gap: 30px;
   }
   .cs-title {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+  .cs-video-container {
+    margin-bottom: 10px;
   }
 }
