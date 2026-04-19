@@ -21,7 +21,7 @@ const PORTFOLIO_CONFIG = {
   },
   "bioBlock": {
     "introTitle": "About Me",
-    "introText": "I specialize in creating dynamic, fast-paced edits tailored for modern audiences. With a deep understanding of pacing and retention, my goal is to convey the message and emotion the video should.",
+    "introText": "I specialize in editing videos in a way that brings out what they are actually trying to say. Most raw footage feels unclear and unfinished, like it has something to say but cannot fully express it. My job is to shape that into something clear, meaningful, and emotionally true so the viewer understands it exactly the way it is meant to be felt.",
     "specialization": "Short-form content, Documentaries, & Brand Films",
     "services": [
       "Video Editing",
