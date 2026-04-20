@@ -314,15 +314,24 @@ button {
   position: relative;
   min-height: 75vh;
   display: flex;
-  flex-direction: row; /* Force side-by-side on desktop */
   align-items: center;
-  justify-content: space-between;
-  gap: 40px;
+  justify-content: center; /* Center the layout-row wrapper */
   padding: 120px 80px 60px; 
   overflow: visible;
   z-index: 10;
   max-width: 1400px;
   margin: 0 auto;
+}
+
+.hero-layout-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
 }
 
 .hero-content {
@@ -399,10 +408,12 @@ button {
 
 @media (max-width: 1024px) {
   .hero {
+    padding: 120px 24px 60px;
+  }
+  .hero-layout-row {
     flex-direction: column;
     text-align: center;
     justify-content: center;
-    padding: 120px 24px 60px;
   }
   .hero-content {
     text-align: center;

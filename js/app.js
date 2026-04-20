@@ -185,7 +185,8 @@ function renderHero(config) {
       </div>
     ` : ''}
 
-    <div class="hero-content">
+    <div class="hero-layout-row">
+      <div class="hero-content">
       <p class="hero-intro">${personalInfo.introText}</p>
       <h1 class="hero-name">${personalInfo.name}</h1>
       <p class="hero-role">${personalInfo.role}</p>
@@ -230,7 +231,8 @@ function renderHero(config) {
       ` : ''}
     </div>
 
-    ${bioHTML}
+      ${bioHTML}
+    </div>
 
     <div class="scroll-hint">
       <div class="scroll-hint-line"></div>
