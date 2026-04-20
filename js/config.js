@@ -94,7 +94,7 @@ const PORTFOLIO_CONFIG = {
     },
     {
       "id": "v2",
-      "title": "Simplified Effect Demonstration",
+      "title": "Simplified Effect Demonstration Step by Step",
       "description": "A fast-paced tutorial video that recreates a popular effect inspired by a famous celebrity. The content is structured into simple, actionable steps, combining curiosity-driven hooks with clear visual guidance to make the effect easy to understand and replicate.",
       "problem": "The original concept could feel complex and overwhelming for viewers, especially beginners. Without clear structure, tutorials like this risk losing attention early or confusing the audience, reducing completion rate and engagement.",
       "goal": "To simplify the effect into an easy-to-follow process while keeping the video engaging and retention-focused. The objective was to ensure viewers clearly understand the concept and are motivated to try it themselves.",
@@ -103,7 +103,8 @@ const PORTFOLIO_CONFIG = {
       "tags": [
         "YouTube",
         "Retention",
-        "Tutorial"
+        "Tutorial",
+        "Viral"
       ],
       "ratio": "9:16",
       "categories": [
