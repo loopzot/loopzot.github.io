@@ -323,16 +323,26 @@ button {
   margin: 0 auto;
 }
 
-.hero-layout-row {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap !important; /* Absolutely prevent stacking on desktop */
+#hero .hero-layout-row {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
-  justify-content: space-between;
-  gap: 40px;
+  gap: 60px;
   width: 100%;
   position: relative;
   z-index: 1;
+}
+
+#hero .hero-content {
+  text-align: left;
+  width: 100%;
+  max-width: 650px;
+}
+
+#hero .hero-bio-block {
+  width: 100%;
+  max-width: 500px;
+  justify-self: end;
 }
 
 .hero-content {
@@ -409,24 +419,23 @@ button {
   color: var(--accent);
 }
 
-@media (max-width: 850px) { /* Lowered from 1024px to keep side-by-side on small laptops/tablets */
-  .hero {
-    padding: 120px 24px 60px !important;
-  }
-  .hero-layout-row {
-    flex-direction: column;
+@media (max-width: 850px) {
+  #hero .hero-layout-row {
+    grid-template-columns: 1fr !important;
     text-align: center;
-    justify-content: center;
-    flex-wrap: wrap !important; /* Allow wrapping only on mobile */
+    gap: 40px;
   }
-  .hero-content {
+  #hero .hero-content {
     text-align: center;
     margin-bottom: 40px;
+    max-width: 100%;
   }
-  .hero-bio-block {
+  #hero .hero-bio-block {
     text-align: left;
     width: 100%;
     margin: 0 auto;
+    max-width: 500px;
+    justify-self: center;
   }
 }
 
