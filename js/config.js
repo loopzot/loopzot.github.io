@@ -74,6 +74,26 @@ const PORTFOLIO_CONFIG = {
       "isVisible": true
     },
     {
+      "id": "v2",
+      "title": "Visualizing Money Devaluation Through Storytelling",
+      "description": "A fast, eye-catching video that turns a complex idea about money into a clear visual story. Strong edits make the message simple, direct, and easy to grasp.",
+      "problem": "The idea feels abstract. People hear “money is worthless,” but don’t truly understand it, so the message doesn’t stick.\n",
+      "goal": "To make the message clear and easy to understand by showing it visually, so viewers instantly grasp the idea without confusion.",
+      "solution": "• Added a 3D coin to clearly represent “real value,” helping viewers understand the contrast instantly\n• Isolated the dollar and reduced background distractions to keep full focus on the key idea\n• Transformed the dollar into toilet paper to create a strong visual metaphor that makes the message easy to grasp\n• Used simple visual storytelling instead of complex explanation to improve comprehension\n• Placed visuals in a clear comparison format to remove confusion and make the message direct\n• Added multiple currency visuals to show the idea applies universally, not just one case\n• Used bold text and clean layouts to make the message readable and understandable at first glance",
+      "videoUrl": "https://drive.google.com/file/d/1JqjUzwbpNlZd8USBDIRzklDn77boUj7G/view?usp=sharing",
+      "tags": [
+        "Money Devaluation",
+        "Fiat Currency Critique",
+        "Financial Literacy",
+        "Economic Myth Busting"
+      ],
+      "ratio": "9:16",
+      "categories": [
+        "Long Form"
+      ],
+      "isVisible": true
+    },
+    {
       "id": "v3",
       "title": "3D Tracking Concept Breakdown",
       "description": "An educational reel designed to introduce and position 3D tracking as a high-value editing skill. The video combines explanation, real-world applications, and a strong call-to-action, making it both informative and conversion-focused.",
@@ -89,26 +109,6 @@ const PORTFOLIO_CONFIG = {
       "ratio": "9:16",
       "categories": [
         "Short Form"
-      ],
-      "isVisible": true
-    },
-    {
-      "id": "v2",
-      "title": "Simplified Effect Demonstration Step by Step",
-      "description": "A fast-paced tutorial video that recreates a popular effect inspired by a famous celebrity. The content is structured into simple, actionable steps, combining curiosity-driven hooks with clear visual guidance to make the effect easy to understand and replicate.",
-      "problem": "The original concept could feel complex and overwhelming for viewers, especially beginners. Without clear structure, tutorials like this risk losing attention early or confusing the audience, reducing completion rate and engagement.",
-      "goal": "To simplify the effect into an easy-to-follow process while keeping the video engaging and retention-focused. The objective was to ensure viewers clearly understand the concept and are motivated to try it themselves.",
-      "solution": "• Broke down the effect into three clear steps to simplify the process\n• Opened with a curiosity-driven hook to capture attention instantly\n• Leveraged familiarity by referencing a famous celebrity to boost initial engagement\n• Explained each step in a simple, easy-to-follow manner for better understanding\n• Used clean visual demonstrations to reinforce the concept\n• Maintained tight pacing to keep the video engaging throughout\n• Focused on clarity and accessibility to improve retention and reach",
-      "videoUrl": "https://www.youtube.com/shorts/sY2ZxTgvoXs",
-      "tags": [
-        "YouTube",
-        "Retention",
-        "Tutorial",
-        "Viral"
-      ],
-      "ratio": "9:16",
-      "categories": [
-        "Long Form"
       ],
       "isVisible": true
     }
