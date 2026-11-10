@@ -16,7 +16,7 @@ const PORTFOLIO_CONFIG = {
     "tagline": "Turning Thoughts into Timeline"
   },
   "availability": {
-    "isAvailable": false,
+    "isAvailable": true,
     "customText": "Available for Work"
   },
   "bioBlock": {
